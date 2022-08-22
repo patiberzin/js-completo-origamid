@@ -1,8 +1,0 @@
-body {
-    background: rgb(205, 205, 255);
-}
-
-body.active { /*quando tiver o active*/
-    background: red;
-}
-

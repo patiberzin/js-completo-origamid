@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Forms</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+    </head>
+    <body>
+
+        <style>
+            label {
+                display: block;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                margin-bottom: .5rem;
+                margin-top: 1rem;
+            }
+
+            form {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            input[type="text"], textarea {
+                width: 100%;
+                box-sizing: border-box;
+                padding: .5rem;
+                border: 2px solid #000;
+                font-size: 1rem;
+                margin-bottom: .5rem;
+            }
+
+            textarea {
+                height: 150px;
+            }
+            .invalido {
+                border-color: red;
+            }
+        </style>
+
+        <form name="contato" id="contato">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <span class="erro"></span>
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" id="mensagem">
+            </textarea>
+            <select name="cores" id="cores">
+                <option value="blue">azul</option>
+                <option value="red">vermelho</option>
+            </select>
+            <input type="color">
+            <input type="date">
+            <input type="number">
+            <input type="range">
+            <input type="password">
+            <input type="checkbox" value="identidade" id="identidade">
+            <label for="identidade">Possui identidade?</label>
+        </form>
+        <span class="texto"></span>
+
+        <script>
+            const contato = document.querySelector('#contato');
+            const texto = document.querySelector('.texto');
+            
+            function handlekeyUp(event) { //background de acordo com a cor que eu quiser.
+                if(event.target.checked) {
+                    console.log(event.target.value);
+                }
+                document.body.style.backgroundColor = event.target.value; //muda o bg
+            }
+            contato.addEventListener('change', handlekeyUp);
+        </script>
+    </body>
+</html>
